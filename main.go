@@ -43,9 +43,12 @@ func login(w http.ResponseWriter, r *http.Request) {
 		log.Println(t.Execute(w, nil))
 	} else {
 		//请求的是登陆数据，那么执行登陆的逻辑判断
-		r.ParseForm()
-		fmt.Println("username:", r.Form["username"])
-		fmt.Println("password:", r.Form["password"])
+		//		r.ParseForm()
+		//		fmt.Println("username:", r.Form["username"])
+		//		fmt.Println("password:", r.Form["password"])
+		fmt.Println("用户名：", r.FormValue("username"))
+		fmt.Println("密码：", r.FormValue("password"))
+		//r.Form.Get()
 	}
 }
 
